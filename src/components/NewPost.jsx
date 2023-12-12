@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const NewPost = ({ onCancel }) => {
+const NewPost = ({ onCancel, onAddPost }) => {
   const [enteredBody, setEnteredBody] = useState('');
   const [enteredAuthor, setEnteredAuthor] = useState('');
 
@@ -18,7 +18,8 @@ const NewPost = ({ onCancel }) => {
       body: enteredBody,
       author: enteredAuthor,
     };
-    console.log(postData);
+
+    onAddPost(postData);
     onCancel();
   };
 
